@@ -1,0 +1,14 @@
+<h1>login</h1>
+<table>
+    <tr>
+        <td>username:</td>
+        <td>
+            <input type="text"  placeholder="user" #user>
+        </td>
+    </tr>
+    <tr>
+        <td>password</td>
+        <td><input type="text" placeholder="password" #pwd ></td>
+    </tr>
+</table>
+<button (click)="login(user.value, pwd.value)">login</button>

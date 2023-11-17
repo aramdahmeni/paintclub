@@ -1,0 +1,49 @@
+{
+    "ateliers":[
+        {
+            "id":1,
+            "nom":"frida khalo",
+            "description":"atelier pour les debutants",
+            "date":"12-11-2023",
+            "lieu":"iset charguia",
+            "image":"frida.jpg",
+            "done":true
+        },
+        {
+            "id":2,
+            "nom":"picasso",
+            "description":"atelier pour les intermediaires",
+            "date":"12-01-2024",
+            "lieu":"iset charguia",
+            "image":"picasso.jpg",
+            "done":false
+        },
+        {
+            "id":3,
+            "nom":"leonardo davenchi",
+            "description":"atelier pour les pro",
+            "date":"12-02-2024",
+            "lieu":"iset charguia",
+            "image":"leo.jpg",
+            "done":false
+        },
+        {
+            "id":4,
+            "nom":"claude monet",
+            "description":"atelier pour les debutants",
+            "date":"12-03-2023",
+            "lieu":"iset charguia",
+            "image":"claude.jpg",
+            "done":false
+        },
+        {
+            "id":5,
+            "nom":"vincent van gogh",
+            "description":"atelier pour les intermediaires",
+            "date":"12-04-2023",
+            "lieu":"iset charguia",
+            "image":"van.jpg",
+            "done":false
+        }
+    ]
+  }
