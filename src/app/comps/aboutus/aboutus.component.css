@@ -1,0 +1,49 @@
+.fond{ 
+    width: 100%;
+    height: 100vh;
+    background-image: url(src/assets/back3.jpeg); 
+    background-position: center; 
+    background-size: cover;
+    
+} 
+span{
+    font-size: 15px;
+    font-weight: bold;
+}
+.row{
+    display: flex;
+    height: 88%;
+    align-items: center;
+
+ }
+ .col{
+    flex-basis: 50%;
+ }
+ h1{
+    font-style: oblique;
+    margin-left: 30px;
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+    font-family: AmstelvarAlpha;
+    
+ }
+ p{
+    font-style: oblique ;
+    margin-left: 30px;
+    color: black;
+    font-size:  20px; 
+    font-family: AmstelvarAlpha;
+    
+ }
+ img{
+    flex-basis: 50%;
+    float: right;
+    margin-right: 200px;
+    width: 50%;
+    height: 50%;
+    border-radius: 20px;
+}
+footer{
+    background-color:#BDB2FF ;
+    text-align: center;
+}  
