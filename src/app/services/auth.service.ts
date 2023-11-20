@@ -1,15 +1,25 @@
 import { Injectable } from '@angular/core';
+import { MembreService } from './membre.service';
+import { Membre } from '../classes/membre';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  
 
-  constructor() { }
+  constructor(private membreservice:MembreService ,private router:Router) { }
   private authenticated=false;
+
   public login(user:string, pwd:string){
-    return this.authenticated=(user=="admin" && pwd=="paintclub");
+  
+    
   }
+
+
+ 
+  
   public logout(){
     this.authenticated=false;
   }
@@ -17,3 +27,4 @@ export class AuthService {
     return this.authenticated
   }
 }
+

@@ -1,0 +1,53 @@
+{
+  "membres": [
+    {
+      "id": 1,
+      "nom": "eya abdellaoui",
+      "specialite": "DSI",
+      "numtel": 22500600,
+      "username_mb": "eya abdel",
+      "password_mb": "eyaab"
+    },
+    {
+      "id": 2,
+      "nom": "ali benali",
+      "specialite": "TI",
+      "numtel": 29977445,
+      "username_mb": "ali",
+      "password_mb": "play"
+    },
+    {
+      "id": 3,
+      "nom": "mohsen ali",
+      "specialite": "MGT",
+      "numtel": 11223345,
+      "username_mb": "mohsen12",
+      "password_mb": "something"
+    },
+    {
+      "id": 4,
+      "nom": "adem abdallah",
+      "specialite": "RSI",
+      "numtel": 99665541,
+      "username_mb": "adem",
+      "password_mb": "rsi"
+    },
+    {
+      "id": 5,
+      "nom": "bayrem tounsi",
+      "specialite": "DSI",
+      "numtel": 22555100,
+      "username_mb": "bayrem tn",
+      "password_mb": "bayremdsi"
+    },
+    {
+      "name": "aaaaa",
+      "numtel": "12345678",
+      "specialite": "TI",
+      "username_mb": "amama",
+      "password_mb": "1234",
+      "confirm_mb": "confirm password",
+      "id": 6
+    }
+  ]
+}

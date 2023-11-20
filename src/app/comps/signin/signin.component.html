@@ -1,0 +1,39 @@
+<br>
+  <h2>Sign Up Form</h2>
+  <br><br>
+<form class="row g-3" [formGroup]="signinform" (ngSubmit)="onSubmit()" >
+    <div class="col-md-6">
+      <label class="form-label" >Full Name</label>
+      <input type="text" class="form-control" formControlName="name" >
+    </div>
+    <div class="col-md-6">
+      <label  class="form-label" >Phone number</label>
+      <input type="number" class="form-control"  formControlName="numtel" >
+    </div>
+    <!--specialite-->
+    <div class="col-md-6">
+        <label for="inputState" class="form-label" >Specialty</label>
+        <select class="form-select" formControlName="specialite">
+          <option *ngFor="let s of lespec" [value]="s" >{{s}}</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label" >Username</label>
+        <input type="text" class="form-control" formControlName="username_mb">
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Password</label>
+        <input type="text" class="form-control"  formControlName="password_mb" >
+      </div>
+
+
+    <div class="col-12" style="text-align: center;">
+
+      <input type="submit" value="sign Up " class="btn btn-outline-danger"
+      style="padding-left: 2.5rem; padding-right: 2.5rem;">
+
+      <span class="small fw-bold mt-2 pt-1 mb-0"> or   </span>           
+      <input type="reset" value="Reset" (click)="onreset()" class="btn btn-outline-danger"  style="padding-left: 2.5rem; padding-right: 2.5rem;">
+              
+    </div>
+  </form>

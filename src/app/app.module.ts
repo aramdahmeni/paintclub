@@ -10,6 +10,9 @@ import { MenuComponent } from './comps/menu/menu.component';
 import { AboutusComponent } from './comps/aboutus/aboutus.component';
 import { AtelierComponent } from './comps/atelier/atelier.component';
 import { DashboardComponent } from './comps/dashboard/dashboard.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SigninComponent } from './comps/signin/signin.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,11 +23,16 @@ import { DashboardComponent } from './comps/dashboard/dashboard.component';
     MenuComponent,
     AboutusComponent,
     AtelierComponent,
-    DashboardComponent
+    DashboardComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+ReactiveFormsModule,
+HttpClientModule
+
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

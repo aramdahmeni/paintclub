@@ -1,14 +1,47 @@
-<h1>login</h1>
-<table>
-    <tr>
-        <td>username:</td>
-        <td>
-            <input type="text"  placeholder="user" #user>
-        </td>
-    </tr>
-    <tr>
-        <td>password</td>
-        <td><input type="text" placeholder="password" #pwd ></td>
-    </tr>
-</table>
-<button (click)="login(user.value, pwd.value)">login</button>
+
+  <br>
+  <h2>Login Form</h2>
+  <br><br>
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="C:\Users\user\OneDrive\Bureau\angular\paintclub\src\assets">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <form [formGroup]="loginform">
+
+  
+            
+            <div class="form-outline mb-4">
+                <label class="form-label " >username   </label>
+              <input type="text"  class="form-control form-control-lg" formControlName="user" #user />
+              
+            </div>
+  
+            <!-- Password input -->
+            <div class="form-outline mb-3">
+                <label class="form-label">Password</label>
+              <input type="text" class="form-control form-control-lg" formControlName="pwd" #pwd/>
+             
+            </div>
+  
+           
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="button" class="btn btn-outline-danger" 
+               style="padding-left: 2.5rem; padding-right: 2.5rem;"  
+               (click)="login(user.value, pwd.value)">Login
+              </button>
+              
+              <span class="small fw-bold mt-2 pt-1 mb-0"> or   </span>   
+        
+              <input type="reset" value="Reset Form" (click)="onreset()" class="btn btn-outline-danger"  style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a class="btn btn-outline-danger btn-sm" routerLink="/signin" >Sign Up</a></p>
+            </div>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </section>
