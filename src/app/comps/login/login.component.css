@@ -6,3 +6,9 @@
     background-size: cover;
     
 } 
+image{
+    size: 300%;
+}
+h1{
+    text-decoration: underline;
+}

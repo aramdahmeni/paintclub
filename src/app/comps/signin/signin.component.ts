@@ -13,7 +13,7 @@ import { Membre } from 'src/app/classes/membre';
 })
 export class SigninComponent implements OnInit {
   lespec!:string[];
-  lesmembres:Membre[]=[];
+  membres:Membre[]=[];
   
   signinform!:FormGroup
   
@@ -57,6 +57,17 @@ export class SigninComponent implements OnInit {
 
       onSubmit(){
         if(this.signinform.valid){
+          let i:number=0;
+    this.membreservice.getmembre().subscribe(data => {
+      this.membres = data;
+      while(i<this.membres.length && this.membres[i].username_mb != this.signinform.get('username_mb')?.value){
+        i++;
+      }
+      if(i!=this.membres.length){
+        alert("this username exists already");
+        this.router.navigate(['/login']);
+      }
+    })
           const values=this.signinform.value;
           this.membreservice.addmembre(values).subscribe(
             data =>console.log(data)

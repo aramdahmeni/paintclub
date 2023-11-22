@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
-const URL='http://localhost:3000/membres';
+const URL='http://localhost:3500/membres';
 @Injectable({
   providedIn: 'root'
 })
@@ -19,6 +19,10 @@ export class MembreService {
     return this.http.get<Membre>(url);
   }
   
+ /* changermdp(user: string, nvmdp:string ){
+    const url=`${URL}/changepwd`;
+    return this.http.post(url,{user, nvmdp});
+  }*/
 
   addmembre(m:Membre):Observable<Membre>{
     return this.http.post<Membre>(URL,m);

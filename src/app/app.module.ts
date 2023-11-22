@@ -13,6 +13,11 @@ import { DashboardComponent } from './comps/dashboard/dashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SigninComponent } from './comps/signin/signin.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ListeateliersComponent } from './comps/listeateliers/listeateliers.component';
+import { SelectedatelierComponent } from './comps/selectedatelier/selectedatelier.component';
+import { FooterComponent } from './comps/footer/footer.component';
+
+
 
 @NgModule({
   declarations: [
@@ -24,7 +29,12 @@ import { HttpClientModule } from '@angular/common/http';
     AboutusComponent,
     AtelierComponent,
     DashboardComponent,
-    SigninComponent
+    SigninComponent,
+    ListeateliersComponent,
+    SelectedatelierComponent,
+    FooterComponent
+
+
   ],
   imports: [
     BrowserModule,

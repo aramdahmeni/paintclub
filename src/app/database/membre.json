@@ -48,6 +48,24 @@
       "password_mb": "1234",
       "confirm_mb": "confirm password",
       "id": 6
+    },
+    {
+      "name": "azaea",
+      "numtel": "12345678",
+      "specialite": "DSI",
+      "username_mb": "ali",
+      "password_mb": "sdc",
+      "confirm_mb": "confirm password",
+      "id": 7
+    },
+    {
+      "name": "aram",
+      "numtel": "12345678",
+      "specialite": "DSI",
+      "username_mb": "aramduh",
+      "password_mb": "12345",
+      "confirm_mb": "confirm password",
+      "id": 8
     }
   ]
 }
