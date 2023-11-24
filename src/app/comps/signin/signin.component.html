@@ -1,14 +1,27 @@
+<body class="fond">
 <br>
-  <h2  class="col-md-6 offset-md-3 text-center mt-4">Sign Up Form</h2>
+  <h2  class="col-md-6 offset-md-3 text-center mt-4" style="font-weight: bold;">Sign Up Form</h2>
   <br><br>
-<form class="row g-3" [formGroup]="signinform" (ngSubmit)="onSubmit()" >
+<form class="row g-3"   [formGroup]="signinform" (ngSubmit)="onSubmit()" >
     <div class="col-md-6">
       <label class="form-label" >Full Name</label>
-      <input type="text" class="form-control" formControlName="name" >
+      <input type="text"  class="form-control" formControlName="name" >
+      <div *ngIf="isvalidatedname()" class="alert alert-danger">
+        the name is required
+      </div>
+      <div *ngIf="isvalidatednamepattern()" class="alert alert-warning">
+        the name should begin with uppercase
+      </div>
     </div>
     <div class="col-md-6">
       <label  class="form-label" >Phone number</label>
       <input type="number" class="form-control"  formControlName="numtel" >
+      <div *ngIf="isvalidatednum()" class="alert alert-danger">
+        the number is required
+      </div>
+      <div *ngIf="isvalidatednumpattern()" class="alert alert-warning">
+        the number should be 8 digits
+      </div>
     </div>
     <!--specialite-->
     <div class="col-md-6">
@@ -23,7 +36,7 @@
       </div>
       <div class="col-md-6">
         <label class="form-label">Password</label>
-        <input type="text" class="form-control"  formControlName="password_mb" >
+        <input type="password" class="form-control"  formControlName="password_mb" >
       </div>
 
 
@@ -37,3 +50,4 @@
               
     </div>
   </form>
+</body>

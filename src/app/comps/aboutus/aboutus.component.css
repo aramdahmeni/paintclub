@@ -48,7 +48,7 @@ body {
    flex-basis: 50%;
 }
  a {
-   color: #ee2cde;
+   color: #080808;
    text-decoration: none;
  }
  
@@ -68,7 +68,8 @@ body {
  h4,
  h5,
  h6 {
-   font-family: "Roboto", sans-serif;
+  font-family: AmstelvarAlpha;
+  font-style: oblique;
  }
  #hero {
    width: 100%;
@@ -79,7 +80,7 @@ body {
  
  #hero:before {
    content: "";
-   background: rgba(255, 255, 255, 0.6);
+  
    position: absolute;
    bottom: 0;
    top: 0;
@@ -126,5 +127,19 @@ body {
  }
  
  #hero .btn-get-started:hover {
-   background: rgb(236, 10, 135);
+   background: rgb(7, 7, 7);
+ }
+ button{
+  font-family: AmstelvarAlpha;
+  font-style: oblique;
+  margin-left: 30px;
+  width: 180px;
+  color: black;
+  font-size: 20px;
+  padding: 12px 0;
+  background-color:#BDB2FF;
+  border: solid 2px;
+  border-radius: 20px;
+  outline: none;
+  margin-top: 30px;
  }

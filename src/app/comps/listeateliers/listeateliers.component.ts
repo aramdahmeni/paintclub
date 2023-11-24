@@ -9,6 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./listeateliers.component.css']
 })
 export class ListeateliersComponent {
+  
  constructor(private authservice:AuthService, private router:Router){}
  logout(){
   this.authservice.logout();

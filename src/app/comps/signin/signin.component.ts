@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MembreService } from 'src/app/services/membre.service';
 import { Router } from '@angular/router';
 import { specialite } from 'src/app/categories/specialite';
@@ -24,12 +24,12 @@ export class SigninComponent implements OnInit {
     
    this.signinform=this.fb.group({
 
-      name:['name'],
-      numtel:['12345678'],
+      name:['',[Validators.required,Validators.pattern('[A-Z][a-z ]+')]],
+      numtel:['',[Validators.required,Validators.pattern('[0-9]{8}')]],
       specialite:[specialite.TI],
-      username_mb:['username'],
-      password_mb:['password'],
-      confirm_mb:['confirm password']
+      username_mb:[''],
+      password_mb:[''],
+      confirm_mb:['']
     })
   }
  
@@ -75,5 +75,40 @@ export class SigninComponent implements OnInit {
           this.router.navigate(['/login']);
         }
       }
+    public get name(){
+      return this.signinform.get('name');
+
+    }
+    public get numtel(){
+      return this.signinform.get('numtel');
+
+    }
+    public get specialite(){
+      return this.signinform.get('specialite');
+
+    }
+    public get username_mb(){
+      return this.signinform.get('username_mb');
+
+    }
+    public get password_mb(){
+      return this.signinform.get('password_mb');
+
+    }
+    public isvalidatedname(){
+      return this.signinform.get('name')?.errors?.['required'] && this.signinform.get('name')?.touched;
+
+    }
+    isvalidatednamepattern(){
+      return this.signinform.get('name')?.errors?.['pattern'] && this.signinform.get('name')?.dirty;
+    }
+    public isvalidatednum(){
+      return this.signinform.get('numtel')?.errors?.['required'] && this.signinform.get('numtel')?.touched;
+
+    }
+    isvalidatednumpattern(){
+      return this.signinform.get('numtel')?.errors?.['pattern'] && this.signinform.get('numtel')?.dirty;
+    }
+    
     
   }
