@@ -1,6 +1,6 @@
 
 
-    <div class="row gx-5 gx-lg-6 row-cols-3 row-cols-md-2 row-cols-xl-3  d-flex justify-content-around" >
+    <div class=" card row gx-5 gx-lg-6 row-cols-3 row-cols-md-2 row-cols-xl-3  d-flex justify-content-around" >
 
       <div  *ngFor="let a of lesateliers" class="border p-2" >
     
@@ -12,7 +12,8 @@
                    
                    <br>
                    
-                   <a [routerLink]="['/ateliers/selectedatelier', a.id]" class="btn btn-outline-dark mt-auto">show details</a>
+                   <button style="font-family: AmstelvarAlpha;
+                   font-style: oblique;"><a [routerLink]="['/ateliers/selectedatelier', a.id]" >show details</a></button>
                   </div>
          
         </div>

@@ -119,5 +119,40 @@ export class SigninComponent implements OnInit {
           
         }
       }
+    public get name(){
+      return this.signinform.get('name');
+
+    }
+    public get numtel(){
+      return this.signinform.get('numtel');
+
+    }
+    public get specialite(){
+      return this.signinform.get('specialite');
+
+    }
+    public get username_mb(){
+      return this.signinform.get('username_mb');
+
+    }
+    public get password_mb(){
+      return this.signinform.get('password_mb');
+
+    }
+    public isvalidatedname(){
+      return this.signinform.get('name')?.errors?.['required'] && this.signinform.get('name')?.touched;
+
+    }
+    isvalidatednamepattern(){
+      return this.signinform.get('name')?.errors?.['pattern'] && this.signinform.get('name')?.dirty;
+    }
+    public isvalidatednum(){
+      return this.signinform.get('numtel')?.errors?.['required'] && this.signinform.get('numtel')?.touched;
+
+    }
+    isvalidatednumpattern(){
+      return this.signinform.get('numtel')?.errors?.['pattern'] && this.signinform.get('numtel')?.dirty;
+    }
+    
     
   }

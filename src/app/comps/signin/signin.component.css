@@ -1,3 +1,13 @@
+.fond{
+    width: 95rem;
+    height: 35rem;
+    background-image: url(src/assets/back3.jpeg); 
+    background-position: center; 
+    background-size: cover;
+    font-family: AmstelvarAlpha;
+    font-style: oblique;
+}
+
 input.ng-valid{
     border-left: 3px solid green;
 }

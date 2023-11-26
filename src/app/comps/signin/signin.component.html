@@ -1,32 +1,17 @@
+<body class="fond">
 <br>
-  <h2  class="col-md-6 offset-md-3 text-center mt-4">Sign Up Form</h2>
+  <h2  class="col-md-6 offset-md-3 text-center mt-4" style="font-weight: bold;">Sign Up Form</h2>
   <br><br>
 <form class="row g-3" [formGroup]="signinform" (ngSubmit)="onSubmit()" >
-    
-  
-  <div class="col-md-6">
+    <div class="col-md-6">
       <label class="form-label" >Full Name</label>
       <input type="text" class="form-control" formControlName="name" >
-
-      <div *ngIf="valid()" class="alert alert-warning" >
-        Your name must contain words only and each start with an uppercase.
-      </div>
-      <div *ngIf="nomoblig()" class="alert alert-danger">
-        Your name is necessary to sign in!
-      </div>
     </div>
 
 
     <div class="col-md-6">
       <label  class="form-label" >Phone number</label>
       <input type="number" class="form-control"  formControlName="numtel" >
-      <div *ngIf="numoblig()" class="alert alert-danger">
-        Your phone number is necessary to sign in!
-      </div>
-      <div *ngIf="validnum()" class="alert alert-warning">
-        Your number must contain 8 numbers and does not start with a 0.
-      </div>
-      
     </div>
     
     
@@ -58,7 +43,14 @@
 
       <div class="col-md-6">
         <label class="form-label">Password</label>
-        <input type="text" class="form-control"  formControlName="password_mb" >
+        <input type="password" class="form-control"  formControlName="password_mb" >
+      </div>
+
+      <div *ngIf="pwdoblig()" class="alert alert-danger">
+        Your phone number is necessary to sign in!
+      </div>
+      <div *ngIf="pwdvalid()" class="alert alert-warning">
+        Your password can only contain letters and/or numbers and it should be one word
       </div>
 
       <div *ngIf="pwdoblig()" class="alert alert-danger">
@@ -79,3 +71,4 @@
               
     </div>
   </form>
+</body>
