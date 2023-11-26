@@ -18,11 +18,13 @@ export class MembreService {
     const url = `${URL}?username_mb=${membreuser}`;
     return this.http.get<Membre>(url);
   }
-  
- /* changermdp(user: string, nvmdp:string ){
-    const url=`${URL}/changepwd`;
-    return this.http.post(url,{user, nvmdp});
-  }*/
+  getmembrebyid(id: number): Observable<Membre> {
+    const url = `${URL}?id=${id}`;
+    return this.http.get<Membre>(url);
+  }
+  changermdp(id: number, nvmdp:string ){
+    return this.http.post(URL,{id, nvmdp});
+  }
 
       addmembre(m:Membre):Observable<Membre>{
         return this.http.post<Membre>(URL,m);
@@ -33,4 +35,5 @@ export class MembreService {
 
     
   
+
 }

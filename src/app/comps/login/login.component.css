@@ -1,16 +1,7 @@
-.fond{ 
-    width: 100%;
-    height: 100%;
-    background-image: url(src/assets/back3.jpeg); 
-    background-position: center; 
-    background-size:cover;
-    margin-top: -25px;
-    font-style: oblique ;
-    font-family: AmstelvarAlpha;
-    
-} 
+
 image{
     size: 300%;
+    box-shadow: 0 4px 9px 12;
 }
 h1{
     font-weight: bold;

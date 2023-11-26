@@ -9,8 +9,12 @@ import { Router } from '@angular/router';
 export class AuthService {
   membres!: Membre[];
 
+
   constructor(private membreservice:MembreService ,private router:Router) { }
   private authenticated=false;
+  private userid!:number;
+
+
 public login(user:string, mdp:string){
    let i:number=0;
   this.membreservice.getmembre().subscribe(data => {
@@ -30,6 +34,7 @@ public login(user:string, mdp:string){
       this.router.navigate(["/signin"]);
     }
     else if(this.membres[i].username_mb == user && this.membres[i].password_mb == mdp){
+            this.userid=this.membres[i].id;
       this.authenticated=true;
         this.router.navigate(["/ateliers"]);
       }
@@ -41,12 +46,16 @@ public login(user:string, mdp:string){
 
   }
   
+
   public logout(){
-    this.authenticated=false;
-    
+    this.router.navigate(['/homepage']);
+   
   }
   public isauthenticated(){
     return this.authenticated
+  }
+  public authtrue(){
+    return this.authenticated=true;
   }
 }
 

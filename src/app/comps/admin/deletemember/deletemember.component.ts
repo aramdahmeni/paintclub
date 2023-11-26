@@ -15,8 +15,8 @@ constructor(public membreservice:MembreService, public fb:FormBuilder){}
  
     ngOnInit(): void {
 
-    this.deleteform=this.fb.nonNullable.group({
-      user:[,Validators.required]
+    this.deleteform=this.fb.group({
+      user:[null,Validators.required]
     })
 
     this.membreservice.getmembre().subscribe((data)=>{
@@ -34,10 +34,10 @@ constructor(public membreservice:MembreService, public fb:FormBuilder){}
 
     delete()
 {    const selectedvalue = this.deleteform.get('user')?.value;
- 
+
     if (selectedvalue) {
       let i: number = 0;
-      while (i < this.member.length) {
+      while (i <=10) {
         if (this.member[i].nom === selectedvalue) {
           this.membreservice.suppmembre(this.member[i].id).subscribe(
             () => {

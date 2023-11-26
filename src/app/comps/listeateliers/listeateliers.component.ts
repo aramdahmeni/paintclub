@@ -12,7 +12,6 @@ export class ListeateliersComponent {
   
  constructor(private authservice:AuthService, private router:Router){}
  logout(){
-  this.router.navigate(["/homepage"]);
   this.authservice.logout();
   
 }

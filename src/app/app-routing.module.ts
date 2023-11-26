@@ -13,17 +13,16 @@ import { ErrorComponent } from './comps/error/error.component';
 import { DeletememberComponent } from './comps/admin/deletemember/deletemember.component';
 import { AddworkshopComponent } from './comps/admin/addworkshop/addworkshop.component';
 import { DeleteworkshopComponent } from './comps/admin/deleteworkshop/deleteworkshop.component';
-import { CheckparticipantsComponent } from './comps/admin/checkparticipants/checkparticipants.component';
 import { InfosComponent } from './comps/admin/infos/infos.component';
 
 const routes: Routes = [
   //membre
   {path:"homepage", title:"homepage", component:HomepageComponent},
   {path:"aboutus", title:"aboutus", component:AboutusComponent},
-  {path:"ateliers",title:"ateliers",component:ListeateliersComponent/*,canActivate:[authGuard]*/},
+  {path:"ateliers",title:"ateliers",component:ListeateliersComponent,canActivate:[authGuard]},
   {path:"workshop", title:"workshop" , component:AtelierComponent},
   { path: "ateliers/selectedatelier/:id", title: "selectedworkshop", component: SelectedatelierComponent },
- 
+
   //login & signin & pwd change
   {path:"login", title:"login", component:LoginComponent},
   {path:"signin",title:"signup", component:SigninComponent},
@@ -31,7 +30,7 @@ const routes: Routes = [
 
 
   //admi
-  {path:"dashboard", title:"dashboard", component:DashboardComponent/*,canActivate:[authGuard]*/,
+  {path:"dashboard", title:"dashboard", component:DashboardComponent ,canActivate:[authGuard],
 children:[
   //workshops
   {path:'info',title:'Informations',component:InfosComponent},
@@ -40,7 +39,6 @@ children:[
   //admin
   {path:'deletemembre',title:'Delete Member',component:DeletememberComponent},
   //participants
-  {path:'checkparticipants',title:"Check Participants",component:CheckparticipantsComponent},
   {path:"", redirectTo:"info",pathMatch:'full'}
   ],},
   

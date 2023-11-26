@@ -14,7 +14,7 @@ import { SharedService } from 'src/app/services/shared.service';
 export class LoginComponent implements OnInit {
 
   loginform!:FormGroup
-  constructor(private router:Router, public authservice:AuthService,private fb:FormBuilder,private sharedservice:SharedService){}
+  constructor(public router:Router, public authservice:AuthService,private fb:FormBuilder,public sharedservice:SharedService){}
   ngOnInit(): void {
     this.loginform=this.fb.group({
       user:['username',Validators.required],
@@ -43,8 +43,9 @@ export class LoginComponent implements OnInit {
   login(){
     const user=this.loginform.get('user')?.value;
     const pwd=this.loginform.get('pwd')?.value;
-    this.sharedservice.setusername(user);
     this.authservice.login(user,pwd);
+    this.sharedservice.setUserName(user);
+
   }
 
   onreset(){

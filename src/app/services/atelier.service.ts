@@ -5,7 +5,6 @@ import { Observable } from 'rxjs';
 
 const URLsimple='http://localhost:3000/ateliers';
 
-
 @Injectable({
   providedIn: 'root'
 })

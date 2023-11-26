@@ -20,7 +20,6 @@ import { DeletememberComponent } from './comps/admin/deletemember/deletemember.c
 import { AddworkshopComponent } from './comps/admin/addworkshop/addworkshop.component';
 import { NavComponent } from './comps/nav/nav.component';
 import { DeleteworkshopComponent } from './comps/admin/deleteworkshop/deleteworkshop.component';
-import { CheckparticipantsComponent } from './comps/admin/checkparticipants/checkparticipants.component';
 import { PipepersoPipe } from './pipeperso.pipe';
 import { InfosComponent } from './comps/admin/infos/infos.component';
 
@@ -44,9 +43,9 @@ import { InfosComponent } from './comps/admin/infos/infos.component';
     AddworkshopComponent,
     NavComponent,
     DeleteworkshopComponent,
-    CheckparticipantsComponent,
     PipepersoPipe,
     InfosComponent
+    
 
 
   ],
