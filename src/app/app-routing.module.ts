@@ -10,6 +10,11 @@ import { SigninComponent } from './comps/signin/signin.component';
 import { ListeateliersComponent } from './comps/listeateliers/listeateliers.component';
 import { SelectedatelierComponent } from './comps/selectedatelier/selectedatelier.component';
 import { ErrorComponent } from './comps/error/error.component';
+import { DeletememberComponent } from './comps/admin/deletemember/deletemember.component';
+import { AddworkshopComponent } from './comps/admin/addworkshop/addworkshop.component';
+import { DeleteworkshopComponent } from './comps/admin/deleteworkshop/deleteworkshop.component';
+import { CheckparticipantsComponent } from './comps/admin/checkparticipants/checkparticipants.component';
+import { InfosComponent } from './comps/admin/infos/infos.component';
 
 const routes: Routes = [
   //membre
@@ -26,7 +31,19 @@ const routes: Routes = [
 
 
   //admi
-  {path:"dashboard", title:"dashboard", component:DashboardComponent/*,canActivate:[authGuard]*/},
+  {path:"dashboard", title:"dashboard", component:DashboardComponent/*,canActivate:[authGuard]*/,
+children:[
+  //workshops
+  {path:'info',title:'Informations',component:InfosComponent},
+  {path:'addworkshop',title:'Add Workshop',component:AddworkshopComponent},
+  {path:'deleteworkshop',title:"Delete Workshop", component:DeleteworkshopComponent},
+  //admin
+  {path:'deletemembre',title:'Delete Member',component:DeletememberComponent},
+  //participants
+  {path:'checkparticipants',title:"Check Participants",component:CheckparticipantsComponent},
+  {path:"", redirectTo:"info",pathMatch:'full'}
+  ],},
+  
   {path:"", redirectTo:"homepage",pathMatch:'full'},
   {path:"**",title:"error",component:ErrorComponent}
  ];

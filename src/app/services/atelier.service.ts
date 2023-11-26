@@ -11,13 +11,17 @@ const URLsimple='http://localhost:3000/ateliers';
 })
 export class AtelierService {
 
-  constructor(private http:HttpClient ) { }
+  constructor(public http:HttpClient ) { }
 
   getatelier():Observable<Atelier[]>{
     return this.http.get<Atelier[]>(URLsimple);
   }
   getatelierbyid(idatelier: number): Observable<Atelier> {
     const url =`${URLsimple}/${idatelier}`;
+    return this.http.get<Atelier>(url);
+  }
+  getatelierbynom(nomatelier: string): Observable<Atelier> {
+    const url =`${URLsimple}/${nomatelier}`;
     return this.http.get<Atelier>(url);
   }
   
@@ -30,8 +34,8 @@ export class AtelierService {
   updateatelier(a:Atelier,id:number):Observable<Atelier>{
     return this.http.put<Atelier>(URLsimple+"/"+id,a);
   }
-  deleteatelier(a:Atelier){
-    return this.http.delete(URLsimple+"/"+a.id);
+  deleteatelier(id:number):Observable<any>{
+    return this.http.delete(`${URLsimple}/${id}`);
   }
 
 }

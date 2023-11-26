@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MembreService } from 'src/app/services/membre.service';
 import { Router } from '@angular/router';
 import { specialite } from 'src/app/categories/specialite';
@@ -24,39 +24,80 @@ export class SigninComponent implements OnInit {
     
    this.signinform=this.fb.group({
 
-      name:['name'],
-      numtel:['12345678'],
+      name:['name', [Validators.required,Validators.minLength(3),Validators.pattern('^[A-Z][a-zA-Z]*( [A-Z][a-zA-Z]*)*$')]],
+      numtel:[0,[Validators.required,Validators.pattern('[1-9][0-9]{7}$')]],
       specialite:[specialite.TI],
-      username_mb:['username'],
-      password_mb:['password'],
-      confirm_mb:['confirm password']
+      username_mb:['username', [Validators.required, Validators.minLength(2),Validators.pattern('^[a-zA-Z0-9]+$')]],
+      password_mb:['password',[ Validators.required, Validators.minLength(4),Validators.pattern('^[a-zA-Z0-9]+$')]],
+ 
     })
   }
+  //validation nom
+  public get nommb(){
+    return this.signinform.get('name');
+  }
+  valid(){
+    return  this.nommb?.errors?.['pattern'] &&this.nommb?.errors?.['minlength'] && this.nommb?.dirty;
+  }
+  nomoblig(){
+    return this.nommb?.errors?.['required'] && this.nommb?.touched;
+  }
+
+
+
+  public get numtelmb(){
+    return this.signinform.get('numtel');
+  }
+  validnum() {
+    return this.numtelmb?.hasError('pattern') && this.numtelmb?.touched;
+  }
+  
+  numoblig() {
+    return this.numtelmb?.hasError('required') && this.numtelmb?.dirty;
+  }
+  
+
+
+  public get usermb(){
+    return this.signinform.get('username_mb');
+  }
+  useroblig(){
+    return this.usermb?.errors?.['required'] && this.usermb?.touched;
+  }
+  uservalid(){
+    return this.usermb?.errors?.['minlength'] &&this.usermb?.errors?.['pattern'] && this.usermb?.touched;
+  }
+
+
+  public get pwdmb(){
+    return this.signinform.get('password_mb');
+  }
+  pwdoblig(){
+    return this.pwdmb?.errors?.['required'] && this.pwdmb?.touched;
+  
+  }
+  pwdvalid(){
+    return this.pwdmb?.errors?.['minlength'] &&this.pwdmb?.errors?.['pattern'] && this.pwdmb?.touched;
+  }
  
-
-  onreset(){
-    this.signinform.reset({ user:'username', pwd: 'password' } );
-    } 
-/*
-    onsubmit(){
-      const name = this.signinform.get('name')?.value;
-  const numtel = this.signinform.get('numtel')?.value;
-  const specialite = this.signinform.get('specialite')?.value;
-  const username_mb = this.signinform.get('username_mb')?.value;
-  const password_mb = this.signinform.get('password_mb')?.value;
-
-  const newMembre: Membre = new Membre(Membre.nextId, name, numtel, specialite, username_mb, password_mb);
-
-      this.membreservice.addmembre(newMembre).subscribe(
-        data => {this.success();}
-      )}
-      success(){
-        alert("welcome to our club!");
-      }*/
+  
 
 
-      onSubmit(){
-        if(this.signinform.valid){
+
+
+  onreset() {
+    this.signinform.reset({
+      name: 'name',
+      numtel: 0,
+      specialite: specialite.TI,
+      username_mb: 'username',
+      password_mb: 'password'
+    });
+  }
+      
+    
+  onSubmit(){
+    if(this.signinform.valid){
           let i:number=0;
     this.membreservice.getmembre().subscribe(data => {
       this.membres = data;
@@ -66,13 +107,16 @@ export class SigninComponent implements OnInit {
       if(i!=this.membres.length){
         alert("this username exists already");
         this.router.navigate(['/login']);
-      }
-    })
+        }
+        else{
           const values=this.signinform.value;
           this.membreservice.addmembre(values).subscribe(
             data =>console.log(data)
           )
           this.router.navigate(['/login']);
+        }
+    })
+          
         }
       }
     

@@ -27,6 +27,7 @@ public login(user:string, mdp:string){
     }
     if(i==this.membres.length){
       alert("user doesnt exist");
+      this.router.navigate(["/signin"]);
     }
     else if(this.membres[i].username_mb == user && this.membres[i].password_mb == mdp){
       this.authenticated=true;

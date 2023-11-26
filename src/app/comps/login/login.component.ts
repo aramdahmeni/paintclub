@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Membre } from 'src/app/classes/membre';
 import { AuthService } from 'src/app/services/auth.service';
 import { MembreService } from 'src/app/services/membre.service';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-login',
@@ -13,15 +14,37 @@ import { MembreService } from 'src/app/services/membre.service';
 export class LoginComponent implements OnInit {
 
   loginform!:FormGroup
-  constructor(private router:Router, public authservice:AuthService,private fb:FormBuilder,private membreservice:MembreService){}
+  constructor(private router:Router, public authservice:AuthService,private fb:FormBuilder,private sharedservice:SharedService){}
   ngOnInit(): void {
     this.loginform=this.fb.group({
-      user:['username'],
-      pwd:['password']
+      user:['username',Validators.required],
+      pwd:['password',Validators.required]
     })
+    
   }
-  login(user:string, mdp:string){
-    this.authservice.login(user,mdp);
+
+  public get pwdmb(){
+    return this.loginform.get('pwd');
+  }
+  pwdoblig(){
+    return this.pwdmb?.errors?.['required'] && this.pwdmb?.touched;
+  
+  }
+  public get usermb(){
+    return this.loginform.get('user');
+  }
+  useroblig(){
+    return this.usermb?.errors?.['required'] && this.usermb?.touched;
+  }
+
+
+
+
+  login(){
+    const user=this.loginform.get('user')?.value;
+    const pwd=this.loginform.get('pwd')?.value;
+    this.sharedservice.setusername(user);
+    this.authservice.login(user,pwd);
   }
 
   onreset(){

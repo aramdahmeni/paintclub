@@ -11,8 +11,9 @@ import { AuthService } from 'src/app/services/auth.service';
 export class ListeateliersComponent {
  constructor(private authservice:AuthService, private router:Router){}
  logout(){
+  this.router.navigate(["/homepage"]);
   this.authservice.logout();
-  this.router.navigate(["/login"]);
+  
 }
 
 

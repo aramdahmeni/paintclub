@@ -1,13 +1,18 @@
-
-<div class="nk-sidebar">           
-    <div class="nk-nav-scroll">
-        <ul class="metismenu" id="menu">
-            <li>
-                <a class="has-arrow" aria-expanded="false">
-                    <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
-                </a>
-            </li>
-        </ul>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<div class="content">
+    <div class="wrapper">
+      <div class="sidebar">
+        <app-nav></app-nav>
+      </div>
+      
+    
+      <div class="rows">
+        <router-outlet></router-outlet>
+      
+      </div>
     </div>
-</div>
-<!--<button (click)="out()">logout</button>-->
+  </div>
+  
+
+
+

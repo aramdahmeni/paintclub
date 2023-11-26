@@ -25,14 +25,6 @@
       "password_mb": "something"
     },
     {
-      "id": 4,
-      "nom": "adem abdallah",
-      "specialite": "RSI",
-      "numtel": 99665541,
-      "username_mb": "adem",
-      "password_mb": "rsi"
-    },
-    {
       "id": 5,
       "nom": "bayrem tounsi",
       "specialite": "DSI",
@@ -41,31 +33,12 @@
       "password_mb": "bayremdsi"
     },
     {
-      "name": "aaaaa",
-      "numtel": "12345678",
+      "name": "Aram Dahmeni",
+      "numtel": 12345678,
       "specialite": "TI",
-      "username_mb": "amama",
-      "password_mb": "1234",
-      "confirm_mb": "confirm password",
-      "id": 6
-    },
-    {
-      "name": "azaea",
-      "numtel": "12345678",
-      "specialite": "DSI",
-      "username_mb": "ali",
-      "password_mb": "sdc",
-      "confirm_mb": "confirm password",
-      "id": 7
-    },
-    {
-      "name": "aram",
-      "numtel": "12345678",
-      "specialite": "DSI",
-      "username_mb": "aramduh",
-      "password_mb": "12345",
-      "confirm_mb": "confirm password",
-      "id": 8
+      "username_mb": "aram",
+      "password_mb": "aram10",
+      "id": 9
     }
   ]
 }

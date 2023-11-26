@@ -16,6 +16,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListeateliersComponent } from './comps/listeateliers/listeateliers.component';
 import { SelectedatelierComponent } from './comps/selectedatelier/selectedatelier.component';
 import { FooterComponent } from './comps/footer/footer.component';
+import { DeletememberComponent } from './comps/admin/deletemember/deletemember.component';
+import { AddworkshopComponent } from './comps/admin/addworkshop/addworkshop.component';
+import { NavComponent } from './comps/nav/nav.component';
+import { DeleteworkshopComponent } from './comps/admin/deleteworkshop/deleteworkshop.component';
+import { CheckparticipantsComponent } from './comps/admin/checkparticipants/checkparticipants.component';
+import { PipepersoPipe } from './pipeperso.pipe';
+import { InfosComponent } from './comps/admin/infos/infos.component';
 
 
 
@@ -32,7 +39,14 @@ import { FooterComponent } from './comps/footer/footer.component';
     SigninComponent,
     ListeateliersComponent,
     SelectedatelierComponent,
-    FooterComponent
+    FooterComponent,
+    DeletememberComponent,
+    AddworkshopComponent,
+    NavComponent,
+    DeleteworkshopComponent,
+    CheckparticipantsComponent,
+    PipepersoPipe,
+    InfosComponent
 
 
   ],

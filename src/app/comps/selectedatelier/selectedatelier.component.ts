@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AtelierService } from 'src/app/services/atelier.service';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-selectedatelier',
@@ -8,7 +9,6 @@ import { AtelierService } from 'src/app/services/atelier.service';
   styleUrls: ['./selectedatelier.component.css']
 })
 export class SelectedatelierComponent implements OnInit{
-
   public idatelier!:number;
   public nom!:string;
   public description!:string;
@@ -17,7 +17,7 @@ export class SelectedatelierComponent implements OnInit{
   public date!:string;
   public lieu!:string;
   
-  constructor(public activatedRoute: ActivatedRoute, private router:Router,public atelierservice:AtelierService){}
+  constructor(public activatedRoute: ActivatedRoute, private sharedservice:SharedService,public atelierservice:AtelierService){}
   ngOnInit(): void {
     this.idatelier=this.activatedRoute.snapshot.params['id'];  
     this.atelierservice.getatelierbyid(this.idatelier).subscribe(
@@ -34,11 +34,10 @@ export class SelectedatelierComponent implements OnInit{
       (error) => {
         console.error('Error fetching atelier:', error);
       }
-      
     );
-    
-
+   }
+  sendrequest():void{
+    this.sharedservice.setworkshopid(this.idatelier); 
   }
-
   
 }

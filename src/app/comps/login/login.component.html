@@ -8,26 +8,32 @@
         <img src="assets/art.jpg">
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 ">
-        <form [formGroup]="loginform">
+        <form [formGroup]="loginform" (ngSubmit)="login()">
           <div class="form-outline mb-4">
               <label class="form-label " >username   </label>
-            <input type="text"  class="form-control form-control-lg" formControlName="user" #user />
+            <input type="text"  class="form-control form-control-lg" formControlName="user" />
             
+          </div>
+          <div *ngIf="useroblig()" class="alert alert-danger">
+            Your Username is necessary to login!
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-3">
               <label class="form-label">Password</label>
-            <input type="text" class="form-control form-control-lg" formControlName="pwd" #pwd/>
+            <input type="text" class="form-control form-control-lg" formControlName="pwd"/>
            
+          </div>
+          <div *ngIf="pwdoblig()" class="alert alert-danger">
+            Your phone number is necessary to login!
           </div>
 
          
           <div class="text-center text-lg-start mt-4 pt-2">
-            <a class="btn btn-outline-danger" 
+            <button type="submit" class="btn btn-outline-danger" 
              style="padding-left: 2.5rem; padding-right: 2.5rem;"  
-             (click)="login(user.value, pwd.value)">Login
-          </a>
+            [disabled]="loginform.invalid">Login
+          </button>
             
             <span class="small fw-bold mt-2 pt-1 mb-0"> or   </span>   
       

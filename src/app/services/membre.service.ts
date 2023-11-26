@@ -24,7 +24,13 @@ export class MembreService {
     return this.http.post(url,{user, nvmdp});
   }*/
 
-  addmembre(m:Membre):Observable<Membre>{
-    return this.http.post<Membre>(URL,m);
-  }
+      addmembre(m:Membre):Observable<Membre>{
+        return this.http.post<Membre>(URL,m);
+      }
+  suppmembre(id:number):Observable<any>{   
+    return this.http.delete<void>(`${URL}/${id}`);
+    }
+
+    
+  
 }
